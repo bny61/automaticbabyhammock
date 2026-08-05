@@ -1,0 +1,112 @@
+site_name: Automatic Baby Hammock — ECU
+site_description: Product development documentation for the electronic control unit
+repo_url: ""
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+  - Home: index.md
+
+  - 00 Product:
+      - Vision: 00-product/vision.md
+      - Project scope: 00-product/project-scope.md
+      - Stakeholders: 00-product/stakeholders.md
+      - Personas and use cases: 00-product/personas-and-use-cases.md
+      - User needs (UN): 00-product/user-needs.md
+      - Competitive benchmark: 00-product/competitive-benchmark.md
+      - Regulatory scope: 00-product/regulatory-scope.md
+
+  - 01 Requirements:
+      - Overview: 01-requirements/index.md
+      - System (SYS): 01-requirements/srs-system.md
+      - Electrical (HW): 01-requirements/srs-electrical.md
+      - Software (SW): 01-requirements/srs-software.md
+      - Mechanical (MEC): 01-requirements/srs-mechanical.md
+      - Frame interface (IF): 01-requirements/frame-interface-assumptions.md
+      - Safety (SAF): 01-requirements/safety-requirements.md
+      - Constraints: 01-requirements/constraints.md
+      - Traceability matrix: 01-requirements/traceability-matrix.md
+
+  - 02 Architecture:
+      - System architecture: 02-architecture/system-architecture.md
+      - ECU block diagram: 02-architecture/ecu-block-diagram.md
+      - Power tree: 02-architecture/power-tree.md
+      - Interface control document: 02-architecture/interface-control-document.md
+      - Operating modes: 02-architecture/operating-modes.md
+      - Software architecture: 02-architecture/software-architecture.md
+
+  - 03 Safety:
+      - Hazard analysis (HAZ): 03-safety/hazard-analysis.md
+      - Design FMEA: 03-safety/fmea-design.md
+      - Safety concept: 03-safety/safety-concept.md
+      - Standards matrix: 03-safety/standards-matrix.md
+
+  - 04 Decisions (ADR):
+      - Index: 04-decisions/index.md
+      - Template: 04-decisions/template.md
+      - ADR-0001 Product positioning: 04-decisions/ADR-0001-product-positioning.md
+      - ADR-0002 Power input strategy: 04-decisions/ADR-0002-power-input-strategy.md
+      - ADR-0003 Connectivity stance: 04-decisions/ADR-0003-connectivity-stance.md
+
+  - 05 Trade studies:
+      - Index: 05-trade-studies/index.md
+      - Template: 05-trade-studies/template.md
+      - TS-001 Actuation concept: 05-trade-studies/TS-001-actuation-concept.md
+      - TS-002 MCU selection: 05-trade-studies/TS-002-mcu-selection.md
+      - TS-003 Motor driver: 05-trade-studies/TS-003-motor-driver.md
+      - TS-004 Sensing approach: 05-trade-studies/TS-004-sensing-approach.md
+      - TS-005 Power supply: 05-trade-studies/TS-005-power-supply.md
+
+  - 06 Verification:
+      - Verification plan: 06-verification/verification-plan.md
+      - Test cases (TC): 06-verification/test-cases/index.md
+      - Acoustic test plan: 06-verification/acoustic-test-plan.md
+      - Load path test plan: 06-verification/load-path-test-plan.md
+      - EMC pre-compliance: 06-verification/emc-precompliance-plan.md
+      - Reliability plan: 06-verification/reliability-plan.md
+
+  - 07 Manufacturing:
+      - DFM checklist: 07-manufacturing/dfm-checklist.md
+      - End-of-line test: 07-manufacturing/eol-test-spec.md
+      - CE technical file: 07-manufacturing/ce-technical-file.md

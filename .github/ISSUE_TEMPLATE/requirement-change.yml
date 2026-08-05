@@ -1,0 +1,48 @@
+name: "Requirement change"
+description: "Add, change or retire a requirement"
+title: "[REQ] "
+labels: ["type:req"]
+body:
+  - type: input
+    id: ids
+    attributes:
+      label: Affected requirement IDs
+      placeholder: "SYS-004, HW-001 - or 'new' if none exists yet"
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options: ["New requirement", "Change to an existing requirement", "Retire a requirement", "Fill in a TBD value"]
+    validations: { required: true }
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: State the requirement as it should read, using "shall".
+    validations: { required: true }
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Which user need or hazard drives this? Cite the ID.
+    validations: { required: true }
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
+      description: "A, I, T or D - and how. If you cannot say, it is not yet a requirement."
+    validations: { required: true }
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What downstream requirements, decisions or designs does this affect?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: "If this fills in a TBD, the value is traceable to a model run or measurement"
+        - label: "If this is a SAF requirement, it names the HAZ it mitigates"
+        - label: "If this is an IF assumption, it has a tolerance band"

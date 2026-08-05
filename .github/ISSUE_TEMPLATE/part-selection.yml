@@ -1,0 +1,42 @@
+name: "Part selection"
+description: "Propose a component for the BOM"
+title: "[PART] "
+labels: ["type:part", "area:hw"]
+body:
+  - type: input
+    id: part
+    attributes:
+      label: Manufacturer part number
+    validations: { required: true }
+  - type: input
+    id: function
+    attributes:
+      label: Function in this design
+    validations: { required: true }
+  - type: input
+    id: requirement
+    attributes:
+      label: Requirement it implements
+      placeholder: "HW-002"
+    validations: { required: true }
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Selection checks
+      options:
+        - label: "Lifecycle is Active (not NRND, not EOL)"
+          required: true
+        - label: "A second source exists, or the reason none does is documented"
+          required: true
+        - label: "RoHS and REACH status confirmed"
+          required: true
+        - label: "Stock and lead time checked"
+          required: true
+        - label: "Cost at 1k volume known"
+          required: true
+        - label: "Derating analysis done, if safety-relevant"
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety relevance
+      description: "Is this part in the load path or in a safety function? If so, substitution later is a design change requiring re-verification."

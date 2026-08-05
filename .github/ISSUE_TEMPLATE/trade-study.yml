@@ -1,0 +1,28 @@
+name: "Trade study"
+description: "Open a weighted comparison that will produce an ADR"
+title: "[TS] "
+labels: ["type:trade-study"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: The single decision this study exists to make. One sentence.
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it cannot be decided by inspection
+      description: What makes it genuinely contested?
+    validations: { required: true }
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Criteria and the requirements they come from
+      description: "Weights are set BEFORE scoring. Every criterion cites a requirement."
+    validations: { required: true }
+  - type: textarea
+    id: blocked
+    attributes:
+      label: Blocked on
+      description: Which models, measurements or decisions must exist first?

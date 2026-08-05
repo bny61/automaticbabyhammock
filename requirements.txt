@@ -1,0 +1,12 @@
+# Documentation site
+mkdocs==1.6.1
+mkdocs-material==9.5.49
+
+# Modelling (Phase 2 onwards)
+numpy>=2.0
+scipy>=1.14
+matplotlib>=3.9
+jupyter>=1.1
+
+# Tooling
+PyYAML>=6.0

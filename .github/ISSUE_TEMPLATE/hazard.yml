@@ -1,0 +1,49 @@
+name: "Hazard"
+description: "Report a newly identified hazard"
+title: "[HAZ] "
+labels: ["type:hazard", "area:safety", "risk:high"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This product hangs above a sleeping infant. Report anything that could cause harm,
+        however unlikely. A hazard that turns out to be negligible costs a few minutes;
+        one that goes unrecorded costs more.
+  - type: textarea
+    id: situation
+    attributes:
+      label: Hazardous situation
+      description: What state or sequence of events creates the danger?
+    validations: { required: true }
+  - type: textarea
+    id: harm
+    attributes:
+      label: Harm
+      description: What injury results, and to whom?
+    validations: { required: true }
+  - type: textarea
+    id: cause
+    attributes:
+      label: Causes
+      description: What failures, misuse or conditions could lead to it?
+    validations: { required: true }
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "catastrophic - death or life-changing injury"
+        - "critical - injury requiring medical attention"
+        - "marginal - minor injury or distress"
+        - "negligible - nuisance"
+    validations: { required: true }
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Proposed mitigation
+      description: "Which layer of the safety concept addresses it? Remember: the user is the weakest layer."
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Field reports, competitor recalls, standards, analysis, or reasoning.
