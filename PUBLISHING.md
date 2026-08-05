@@ -4,12 +4,25 @@ The working tree is anonymised. **The git history is not.**
 
 ## History was rewritten on 2026-08-05
 
-The history originally contained brand names — in documents *and in commit messages* — plus about
-16 MB of teardown photographs. All of it was removed with `git-filter-repo`, and the remote was
-recreated from scratch so no unreferenced objects remained server-side.
+The original history contained brand names — in documents *and in commit messages* — plus about
+16 MB of teardown photographs. All of it was removed with `git-filter-repo`, and the GitHub
+repository was **deleted and recreated from scratch**, so no unreferenced objects remain
+server-side. This is the strong form: a force-push alone would have left the old objects reachable
+by SHA until GitHub garbage-collected them.
 
-Verified after the rewrite: no image blobs in any commit, no brand names in any commit message or
-in any historical version of any file, pack size reduced from 16.22 MiB to under 250 KiB.
+Verified after the rewrite:
+
+| Check | Result |
+|---|---|
+| Image blobs in any commit | 0 |
+| Brand names in any historical file version | 0 |
+| Brand names in any commit message | 0 |
+| Pack size | 16.22 MiB → 197 KiB |
+| Commit history | intact, not squashed |
+
+A caution learned the hard way: replacing a short model name across history can corrupt ordinary
+words — one of them is a substring of *anomaly* and *normally*. Replace the exact literal string,
+not the bare name, and check afterwards.
 
 **A full backup of the original history exists as a git bundle** outside the repository. If the
 codename mapping is ever needed against the original record, it is there. Keep it private.
