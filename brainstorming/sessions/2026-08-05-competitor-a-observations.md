@@ -38,11 +38,11 @@ not stronger. [observed] There is **no automatic resonance tracking** in the mar
 product.
 
 **As the baby grows, the user adds springs to the pack.** [observed] Started with 2–3 springs, now
-running 5–7. Describes the task as *"mildly irritating"* and volunteered that *"one spring would be
+running 5–7. Describes the task as mildly irritating and volunteered that *"one spring would be
 better like in other solutions"*.
 
 **Interface is a single dial plus an LED.** [observed] No timer, no separate power switch. The LED
-is *"noticeable but tolerable"* in a dark room.
+is noticeable but tolerable in a dark room.
 
 **Motivation:** business opportunity and personal/engineering interest — explicitly **not** driven
 by the existing products being too expensive or deficient. The spring-adding complaint was the

@@ -18,7 +18,7 @@ stand or ceiling) and a hook at the bottom (to the hammock), containing the spri
 and the control electronics.
 
 **The motion is vertical bounce, not lateral swinging.** Competitor A states this explicitly of its
-stand: *"Up/down movements only, not swinging."* The mechanism is a **driven mass-spring
+stand: that its stand produces up-and-down movement only, not swinging The mechanism is a **driven mass-spring
 oscillator pumped near resonance** — this is the single most important fact about the product and
 it governs the modelling, the actuator concept and the control law.
 
@@ -80,7 +80,7 @@ No accelerometer, load cell or separate encoder is present, which matters for
 
 ## Specification comparison
 
-| | **Competitor A A-1** | **Competitor A Maly** | **Competitor B B-1** | **Competitor C** |
+| | **Competitor A-1** | **Competitor A-2** | **Competitor B-1** | **Competitor C** |
 |---|---|---|---|---|
 | Unit mass | ~1.5 kg *(vendor)* | ~1.5 kg *(vendor)* | — | 4 kg (complete) *(vendor)* |
 | Length, hook to hook | ~44 cm *(vendor)* | ~40 cm *(vendor)* | 22 cm (h) *(vendor)* | — |
@@ -95,11 +95,11 @@ No accelerometer, load cell or separate encoder is present, which matters for
 | Control | one user-facing dial + LED; sets **rate**, not amplitude *(observed)* | rotary knob | dial on unit, no app *(vendor)* | self-learning motor *(vendor)* |
 | Wireless | none | none | none — advertised as a feature *(vendor)* | none |
 | Duty limit | — | — | none stated *(vendor)* | — |
-| Noise claim | soft whir, once per bounce cycle *(observed)* | — | "flüsterleise" *(vendor)* | "lautlos" *(vendor)* |
+| Noise claim | soft whir, once per bounce cycle *(observed)* | — | whisper-quiet *(vendor)* | silent *(vendor)* |
 | Running cost | — | — | ~15 ct/month @ 3 h/day *(vendor)* | — |
 | Safety features | — | — | weight detection + auto-stop; redundant springs *(vendor)* | shutdown within seconds on smallest irregularity *(vendor)* |
 
-Wider field, not yet analysed: **nonomo**, **moonboon**, **Membantu**, **Elvent**, **Schmusewolke**.
+Wider field, not yet analysed: five further entrants (see the private competitor key).
 
 ## What the benchmark tells us
 
@@ -129,16 +129,14 @@ early is therefore high-leverage.
 
 ### Wireless is a market negative here
 
-Competitor B advertises operating *"ganz ohne schädliche Funk-Strahlung"* (entirely without harmful
-radio radiation) and stresses that no app is needed. In this segment a radio is not a neutral
+Competitor B advertises operating as operating entirely without radio emissions and stresses that no app is needed. In this segment a radio is not a neutral
 feature addition: it costs Radio Equipment Directive compliance work, including the now-mandatory
 cybersecurity requirements, **and** it may actively harm positioning with the target buyer. See
 [ADR-0003](../04-decisions/ADR-0003-connectivity-stance.md).
 
 ### A documented field failure at the frame interface
 
-Competitor A warns that Maly is *"nicht kompatibel mit Gestellen, die eine Eigenschwingung haben"* —
-incompatible with stands that have their own resonance. A driven oscillator coupled into a
+Competitor A warns that A-2 is is incompatible with stands that have their own resonance. A driven oscillator coupled into a
 compliant support can pump energy into an unintended mode and grow the amplitude beyond design
 intent. Because our stand is out of scope, this must become a **bounded, testable constraint** in
 the ICD rather than an unstated assumption. Drives [HAZ-002](../03-safety/hazard-analysis.md#haz-002)
@@ -177,9 +175,10 @@ Open items for Phase 1. These are the gaps that would most change the design:
   quantitative rather than proportional.
 - **Adapter output voltage.** The 35 V-rated bulk capacitor hints the incumbent may run above 12 V;
   the label has not been read. Relevant to [ADR-0004](../04-decisions/ADR-0004-nominal-supply-voltage.md).
-- **Whether any safety monitor independent of the MCU exists.** None is visible in the photographs,
-  which would put the incumbent below the bar our
-  [SAF-005](../01-requirements/safety-requirements.md#saf-005) sets.
+- **Whether any safety monitor independent of the MCU exists.** We could not identify one in the
+  photographs, but that is a limit of the evidence rather than a finding — it could be internal to
+  the MCU or simply not visible. Relevant only as context for
+  [SAF-005](../01-requirements/safety-requirements.md#saf-005), which we set for our own reasons.
 - **Retail pricing and BOM cost position** — not yet gathered.
 
 ## Positioning gap analysis

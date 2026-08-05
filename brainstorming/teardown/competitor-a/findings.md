@@ -118,10 +118,14 @@ therefore an inference of load. If confirmed, this is a significant finding for
 [TS-004](../../../docs/05-trade-studies/TS-004-sensing-approach.md): the incumbent gets amplitude,
 position and occupancy without a single dedicated sensor.
 
-**The electronics are modest and cheap.** A Cortex-M0, a hardware-configured gate driver with no
-SPI, two pots and an LED. There is no evidence of a safety monitor independent of the MCU — which
-is a notable difference from our
-[safety concept](../../../docs/03-safety/safety-concept.md), and worth confirming.
+**The electronics are economical.** A Cortex-M0, a hardware-configured gate driver with no SPI,
+two pots and an LED.
+
+We could not identify a safety monitor independent of the MCU in these photographs. **That is an
+observation about what the images show, not a conclusion about the product.** Such a function could
+be implemented inside the MCU, in a part we did not photograph or could not read, or in a way not
+visible externally. Nothing here should be read as a safety criticism of a shipped, presumably
+conformity-assessed product, and nothing here has been tested.
 
 ## Impact on our project
 
@@ -129,7 +133,7 @@ is a notable difference from our
 |---|---|
 | [TS-001](../../../docs/05-trade-studies/TS-001-actuation-concept.md) actuation concept undecided | A working, quiet, shipped answer exists: sensored BLDC + reduction gear + cable drum |
 | [TS-004](../../../docs/05-trade-studies/TS-004-sensing-approach.md) sensing undecided | Motor-intrinsic sensing may remove the need for dedicated sensors entirely |
-| [SAF-005](../../../docs/01-requirements/safety-requirements.md#saf-005) independent drive disable | No independent monitor visible in the incumbent — our requirement may exceed the category norm |
+| [SAF-005](../../../docs/01-requirements/safety-requirements.md#saf-005) independent drive disable | None identifiable in the photographs; inconclusive |
 | [HW-001](../../../docs/01-requirements/srs-electrical.md#hw-001) nominal voltage `TBD-P4` | Owner has set **12 V** for our design; incumbent may run higher |
 | Bulk storage sizing "depends on the actuation concept" | Confirmed: 6800 µF for an impulsive drive |
 

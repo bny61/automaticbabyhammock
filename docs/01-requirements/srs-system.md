@@ -42,7 +42,7 @@ below 25 dB(A), at any setting and across the full rated load range, including a
 impulsive components.
 
 **Rationale:** Silence is the primary axis of competition; benchmark products lead with
-"flüsterleise" and "lautlos". This requirement will eliminate whole actuator families before
+whisper-quiet and silent. This requirement will eliminate whole actuator families before
 [TS-001](../05-trade-studies/TS-001-actuation-concept.md) begins, so the number must be set from
 measurement of reference units, not chosen for convenience. Tonal content matters more than
 absolute level for waking a sleeper, hence its explicit inclusion.

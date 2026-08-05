@@ -110,7 +110,24 @@ Nothing in `brainstorming/` is authoritative and none of it may be cited as the 
 design. An idea graduates by becoming an ADR, a trade study, a requirement or a hazard — and a
 hazard graduates **immediately**, not at the end of a session.
 
-## 11. Style
+## 11. Competitor anonymity
+
+**Never write a competitor's brand or product name into this repository** — not in documents, file
+names, or commit messages. Use the codenames `Competitor A`, `A-1`, `Competitor B`, `B-1`,
+`Competitor C`. The mapping lives in `COMPETITOR-KEY.md`, which is gitignored and must stay that
+way.
+
+Do not quote a competitor's marketing copy verbatim, in any language — a distinctive phrase
+identifies the company as surely as its name. Paraphrase instead.
+
+State only what was observed, and say so. Never assert that a competitor's product is unsafe,
+non-compliant or defective: describe the evidence, note its limits, and leave the conclusion
+unstated. These are shipped products that have been through conformity assessment; our
+observations are uncontrolled and untested.
+
+See `PUBLISHING.md` before making anything public.
+
+## 12. Style
 
 Requirements use "shall". Goals use "should". Never use "shall" for something that is not
 verifiable. If you cannot write the verification method, the requirement is not yet a requirement.

@@ -15,7 +15,7 @@ Establishes what the user actually knows first-hand, which determines how much w
 everything else they say.
 
 - Have you owned, used or handled any of these products — Competitor A, Competitor B, Competitor C,
-  nonomo, moonboon? Which, and for how long?
+  another entrant, another entrant? Which, and for how long?
 - Do you have one you can take apart, or photograph, or weigh?
 - Is there a prototype or mechanism already built, or is this still on paper?
 - What made you start this project? What was wrong with what you could buy?

@@ -14,8 +14,8 @@ The default assumption for a modern appliance is app control over BLE or Wi-Fi. 
 category, that assumption is wrong in both directions — market and compliance.
 
 **Market evidence.** Every reference product uses a **physical dial on the unit** and none offers an
-app. Competitor B goes further and advertises operating *"ganz ohne schädliche Funk-Strahlung"*
-(entirely without harmful radio radiation), and stresses that no app is needed. In this segment,
+app. Competitor B goes further and advertises that its unit operates entirely without radio
+emissions, presenting that as a health benefit, and stresses that no app is needed. In this segment,
 the absence of a radio is marketed as a **feature**. Whatever one thinks of the underlying claim,
 the buyer's belief is the commercial fact we must design against.
 

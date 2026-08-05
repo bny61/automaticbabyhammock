@@ -71,9 +71,9 @@ of the infant; structural overload of the stand.
 **Causes:** compliant or lightweight stand; a stand within its own resonance band; the drive
 tracking to a coupled mode rather than the hammock mode.
 
-**Evidence this is real:** Competitor A publicly states that one of its units is *"nicht kompatibel
-mit Gestellen, die eine Eigenschwingung haben"* — incompatible with stands having their own
-oscillation. This is a known category failure mode, not a theoretical one. Because our stand is
+**Evidence this is real:** Competitor A publicly warns that one of its units is incompatible with
+stands that have their own resonance. This is a known category failure mode, not a theoretical
+one. Because our stand is
 [out of scope](../00-product/project-scope.md), it must be bounded in the
 [ICD](../02-architecture/interface-control-document.md) as
 [IF-002](../01-requirements/frame-interface-assumptions.md#if-002).

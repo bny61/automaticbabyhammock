@@ -13,7 +13,7 @@ Because this is a hardware product, releases are tagged per **design revision**
   requirement linter and traceability generator, issue/PR templates, MkDocs site.
 - `ADR-0001` (product positioning), `ADR-0002` (power input strategy) and
   `ADR-0003` (connectivity stance) opened as `proposed`.
-- Competitive benchmark data for Competitor A, Competitor B B-1 and Competitor C.
+- Competitive benchmark data for Competitor A, Competitor B-1 and Competitor C.
 
 ### Notes
 - No hardware design decisions have been made. MCU, actuator, motor driver and sensing

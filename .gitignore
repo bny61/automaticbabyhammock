@@ -56,3 +56,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# --- Private: competitor identities, never commit ----------------------------
+COMPETITOR-KEY.md

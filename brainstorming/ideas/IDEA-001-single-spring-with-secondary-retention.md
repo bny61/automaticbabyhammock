@@ -18,7 +18,7 @@ This separates two jobs that the Competitor A pack currently conflates: *load-ra
 
 ## Why it might work
 
-- The user asked for exactly this: *"one spring would be better like in other solutions"*
+- The user asked for exactly this: that a single spring would be preferable, as other products use
 - Redundancy stops being a side effect of the spring count and becomes a **designed, analysable
   element** — which is a much stronger position for
   [SAF-001](../../docs/01-requirements/safety-requirements.md#saf-001) and the technical file

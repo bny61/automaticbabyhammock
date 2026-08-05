@@ -4,7 +4,7 @@ Product development repository for the **ECU of an automatic baby hammock**: the
 motorised drive unit that hangs between a stand and a baby hammock and bounces it vertically on
 springs (a motorised *Federwiege*).
 
-Benchmarked against **Competitor A** (A-1 / Maly / A-3), **Competitor B B-1** and **Competitor C**.
+Benchmarked against **Competitor A** (A-1 / A-2 / A-3), **Competitor B-1** and **Competitor C**.
 
 > **Safety-critical product.** The unit carries an infant's full weight directly above them.
 > Read [`CLAUDE.md`](CLAUDE.md) before contributing — human or agent.
