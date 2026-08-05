@@ -182,6 +182,22 @@ architecture* choice rather than a mechanical detail.
 This is a principle worth adopting outright rather than re-deriving: see
 [IDEA-004](../../ideas/IDEA-004-actuator-parallel-to-load-path.md).
 
+## How it actually operates *(observed)*
+
+Turning the dial on does **not** start the hammock. The parent **taps the hammock by hand**; the
+unit detects the resulting oscillation and sustains it at the level set by the dial.
+
+This is the missing piece of the control architecture:
+
+- **No resonance search is needed.** The tap excites the system at its own natural frequency; the
+  unit only has to recognise motion and phase-lock to it
+- **The motor is the sensor.** A bouncing hammock pulls the rope, turns the drum and back-drives
+  the motor. Hall sensors work at zero speed, so the tap is detectable while the drive is idle —
+  this is very likely *why* the motor is sensored rather than sensorless
+- **It cannot start by itself**, which makes unexpected restart after a power interruption
+  structurally impossible rather than a matter of firmware
+- The "soft whir once per bounce cycle" now makes complete sense: detect phase, pulse, coast
+
 ## Remaining open
 
 - Spring rate, free length and count
