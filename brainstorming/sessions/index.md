@@ -4,9 +4,7 @@ Notes from [`/brainstorm`](../../.claude/skills/brainstorm/SKILL.md) interviews,
 
 | Date | Topic | Unblocked | Still open |
 |---|---|---|---|
-| | | | |
-
-*Empty — run `/brainstorm` to start.*
+| [2026-08-05](2026-08-05-Competitor A-observations.md) | Competitor A first-hand observations | Acoustic signature, amplitude, spring pack purpose, stiffness calibration point | Actuator type (awaiting photos), spring rate, cost target, ADR-0001 |
 
 ## What a session is for
 
