@@ -2,28 +2,35 @@
 
 The working tree is anonymised. **The git history is not.**
 
-## What is in the history
+## History was rewritten on 2026-08-05
 
-Everything committed before 2026-08-05 contains:
+The history originally contained brand names — in documents *and in commit messages* — plus about
+16 MB of teardown photographs. All of it was removed with `git-filter-repo`, and the remote was
+recreated from scratch so no unreferenced objects remained server-side.
 
-- **Competitor brand and product names**, in documents *and in commit messages*
-- **Teardown photographs** of a competitor's internals — roughly 16 MB of images, committed between
-  2026-08-05 and their untracking later the same day
-- Verbatim German marketing copy, which identifies a company as surely as its name
+Verified after the rewrite: no image blobs in any commit, no brand names in any commit message or
+in any historical version of any file, pack size reduced from 16.22 MiB to under 250 KiB.
 
-Anonymising the working tree does not remove any of this. `git log`, `git show` and every GitHub
-commit page still expose it, and rewriting published history is far harder than avoiding the
-problem.
+**A full backup of the original history exists as a git bundle** outside the repository. If the
+codename mapping is ever needed against the original record, it is there. Keep it private.
+
+Do not undo this by committing a file that contains the names — including a helpful "check for the
+names" script. That mistake was made once already: the check command below deliberately builds its
+pattern from the gitignored key rather than hard-coding the brands.
 
 ## Publishing safely
 
 **Do not make this repository public.** Publish a fresh one instead:
 
 ```bash
-# 1. Verify the working tree is clean of identifiers
-grep -rniE 'Competitor A|Competitor B|Competitor C|A-1|A-2|A-3|B-1' \
-     --include='*.md' --include='*.yml' . | grep -v '^./site/' | grep -v '^./.venv/'
-#    (should print nothing; note "maly" also matches "anomaly" - check hits by eye)
+# 1. Verify the working tree is clean of identifiers.
+#    The brand names live only in COMPETITOR-KEY.md, which is gitignored - so build
+#    the pattern from it rather than writing the names into a tracked file.
+PATTERN=$(awk -F'|' '/^\| (Competitor|A-|B-|Other)/ {gsub(/ /,"",$3); print $3}' \
+          COMPETITOR-KEY.md | grep -v '^$' | paste -sd'|' -)
+grep -rniE "$PATTERN" --include='*.md' --include='*.yml' . \
+     | grep -v '^./site/' | grep -v '^./.venv/'
+#    (should print nothing; beware short names that are substrings of ordinary words)
 
 # 2. Teardown images are already gitignored, so they will not be exported.
 #    Confirm anyway:  ls ../abh-public/brainstorming/teardown/competitor-a/
