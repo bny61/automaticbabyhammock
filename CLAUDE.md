@@ -101,7 +101,16 @@ Regulatory statements must cite the specific standard and clause in
 `docs/03-safety/standards-matrix.md`. Do not assert compliance — assert *intended* compliance plus
 the verification that will demonstrate it. Only a test report demonstrates compliance.
 
-## 10. Style
+## 10. Brainstorming
+
+Half-formed thinking belongs in `brainstorming/`, not in `docs/`. Run `/brainstorm` to interview
+the user and capture ideas and sketches there.
+
+Nothing in `brainstorming/` is authoritative and none of it may be cited as the basis for a
+design. An idea graduates by becoming an ADR, a trade study, a requirement or a hazard — and a
+hazard graduates **immediately**, not at the end of a session.
+
+## 11. Style
 
 Requirements use "shall". Goals use "should". Never use "shall" for something that is not
 verifiable. If you cannot write the verification method, the requirement is not yet a requirement.
