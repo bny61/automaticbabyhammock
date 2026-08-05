@@ -127,7 +127,16 @@ observations are uncontrolled and untested.
 
 See `PUBLISHING.md` before making anything public.
 
-## 12. Style
+## 12. Specialist reviewers
+
+Five subagents live in `.claude/agents/` — `impact-auditor`, `safety-reviewer`,
+`standards-researcher`, `requirements-auditor`, `model-validator`. They report and do not edit; see
+`.claude/agents/README.md` for when each is worth running.
+
+The one to reach for most often is **`impact-auditor`**: whenever a fact changes, it finds every
+artefact built on the old one. That sweep is the step most likely to be skipped.
+
+## 13. Style
 
 Requirements use "shall". Goals use "should". Never use "shall" for something that is not
 verifiable. If you cannot write the verification method, the requirement is not yet a requirement.
