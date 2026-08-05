@@ -27,21 +27,32 @@ hammocks — which is why our stand and textile are out of scope, and why the
 [interface control document](../02-architecture/interface-control-document.md) carries so much
 weight.
 
-### The spring pack is load adaptation, not primarily redundancy
+### What the spring pack is actually for
 
-Competitor B markets the multi-spring pack as a safety feature — if one spring fails, the others
-prevent a fall. That is true, but **it is not what the springs are for.** The owner of a
-Competitor A unit reports **adding springs as the baby grows**, going from 2–3 at birth to 5–7
-later. *(observed)*
+The springs **carry the infant's weight and provide the oscillation** *(owner)*. Competitor B
+markets the multi-spring pack as a redundancy feature — if one fails, the others prevent a fall —
+which is true but is a by-product, not the purpose.
 
-The physics is consistent: frequency goes as √(k/m), so holding the resonant frequency in the
-drivable band as mass rises requires stiffness to rise proportionally, and springs in parallel add
-stiffness linearly. The rated range of 3–18 kg is a factor of six; the packs offer up to seven
-springs. Those are the same number.
+The parent **adds springs as the baby grows**, going from 2–3 at birth to 5–7 later *(observed)*,
+to stop the pack over-extending under the greater load. That is a static strength concern. It also,
+unavoidably, keeps the bounce frequency constant:
 
-**Redundancy is a genuine but secondary benefit of a mechanism the design needed anyway.** The
-consequence for us is significant: load-range adaptation in these products is solved *mechanically
-and manually*, by the parent — see [HAZ-009](../03-safety/hazard-analysis.md#haz-009).
+Static droop is `x = mg/k`, and substituting into `f = (1/2π)√(k/m)` gives
+
+    f = (1/2π)·√(g/x)
+
+**Frequency depends only on droop** — not on the baby's mass, not on the spring rate. So restoring
+the droop restores the frequency. Load-bearing and frequency-setting are one job, not two.
+
+This predicts the observed behaviour: the published ~22 cm free / ~44 cm loaded dimensions give a
+droop of ~22 cm and therefore ≈ 1.06 Hz, and the owner independently describes the bounce as "about
+one per second". Derivation and validation plan in
+`models/spring-mass-dynamics/static-droop-sets-frequency.md`.
+
+**The consequence for us is significant.** Adaptation across 3–18 kg *must* be mechanical in some
+form — a control loop cannot stop a spring being over-extended. In these products it is also
+**manual**, done by the parent, which is what creates
+[HAZ-009](../03-safety/hazard-analysis.md#haz-009).
 
 ### How Competitor A actually drives the hammock *(teardown)*
 

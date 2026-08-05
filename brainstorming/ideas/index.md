@@ -18,7 +18,7 @@ Allocate an ID with `python tools/new_idea.py "Title"`.
 | ID | Idea | Topic | Status | Graduated to |
 |---|---|---|---|---|
 | [IDEA-001](IDEA-001-single-spring-with-secondary-retention.md) | Single user-facing spring plus hidden secondary retention | mechanical | promising | — |
-| [IDEA-002](IDEA-002-resonance-tracking-replaces-spring-changes.md) | Electronic resonance tracking replaces manual spring changes | control | promising | — |
+| [IDEA-002](IDEA-002-resonance-tracking-replaces-spring-changes.md) | Electronic resonance tracking replaces manual spring changes | control | **parked** — premise partly refuted | — |
 | [IDEA-003](IDEA-003-tell-user-when-to-add-a-spring.md) | Simply tell the user when to add a spring | interface | parked | — |
 | [IDEA-004](IDEA-004-actuator-parallel-to-load-path.md) | Keep the actuator out of the load path entirely | mechanical | promising | — |
 | [IDEA-005](IDEA-005-tap-to-start-user-excites-unit-sustains.md) | Tap to start: the user excites, the unit only sustains | control | promising | — |

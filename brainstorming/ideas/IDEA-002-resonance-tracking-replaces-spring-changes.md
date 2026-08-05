@@ -1,7 +1,7 @@
 # IDEA-002 — Electronic resonance tracking replaces manual spring changes
 
 ```
-Status:  promising
+Status:  parked — premise partly refuted, see correction
 Date:    2026-08-05
 Source:  session 2026-08-05-Competitor A-observations
 Topic:   control
@@ -26,6 +26,28 @@ the control domain, automatically.
   one ("maintain amplitude") turns out not to be the real user pain
 - A clean marketing story against every incumbent: *nothing to adjust, ever*
 - Twins, or a baby plus bedding, stop being special cases
+
+## Correction, 2026-08-05 — the premise is partly wrong
+
+This idea was written on the assumption that springs are added to keep the resonant frequency in
+band, so that tracking frequency electronically would remove the need to add them.
+
+The owner has since clarified that **the springs are there to hold the baby's weight as well as to
+provide the swing**, and the analysis in `models/spring-mass-dynamics/static-droop-sets-frequency.md`
+shows why that matters:
+
+- Static droop is `x = mg/k`, and frequency reduces to `f = (1/2π)√(g/x)` — it depends **only on
+  droop**
+- Adding springs to stop a heavier baby over-extending the pack *automatically* restores the
+  frequency. The two purposes are one action
+- **A control loop cannot substitute for this.** Resonance tracking copes with a frequency shift;
+  it cannot stop an 18 kg toddler over-extending a spring sized for a newborn. Static
+  over-extension is a strength problem and no firmware fixes it
+
+So electronic tracking **does not eliminate the mechanical adaptation**. Some stiffness change is
+unavoidable across a 3–18 kg range. What remains open is only whether the *parent* has to make it —
+which points at automatic stiffness change or a progressive-rate spring rather than at a control
+loop.
 
 ## Why it might not
 

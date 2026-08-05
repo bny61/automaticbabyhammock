@@ -77,7 +77,14 @@ So one of these must be true, and it matters for the control design:
 3. The unit is **not** locked to resonance and does force the rate, in which case adding springs
    serves some other purpose
 
-**Unresolved.** Worth watching the hammock against a clock at both dial extremes.
+**Largely resolved, 2026-08-05.** The owner tested both extremes: at 10 % the amplitude is small,
+at 90 % it is larger *and appears to go faster*. Explanation (1) fits — at larger amplitude the
+hammock covers more distance per cycle, so its **velocity** is higher while the bounce **rate** is
+unchanged. The eye reads velocity, not frequency.
+
+A secondary possibility remains: real spring packs are not perfectly linear, and a hardening
+(progressive) spring genuinely raises frequency with amplitude. Counting bounces against a clock at
+both extremes would separate the two.
 
 ## Related
 
