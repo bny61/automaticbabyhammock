@@ -76,6 +76,14 @@ python tools/gen_traceability.py          # regenerate the traceability matrix
 Run the linter before every commit touching `docs/`. The traceability matrix is **generated** —
 never edit it by hand.
 
+CI runs the linter, its self-test, the matrix freshness check and a strict docs build on every
+push. The built site is downloadable from the run summary as the `site` artifact.
+
+> **Docs site hosting:** GitHub Pages is not available for private repositories on the current
+> plan, so the deploy job is skipped. To enable it later: upgrade the plan, set
+> *Settings → Pages → Source* to **GitHub Actions**, then `gh variable set ENABLE_PAGES --body true`.
+> Until then, read the docs locally with `mkdocs serve`.
+
 ## Licence
 
 Proprietary. All rights reserved. See [`LICENSE`](LICENSE).
