@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0007
+Decides:    ADR-0008
 Blocked on: Phase 2 models; Phase 3 hazard analysis
 ```
 
@@ -43,6 +43,17 @@ not only "which sensors" but "how many independent views of the truth do we need
 **Elimination:** any approach in which a single sensor failure can leave both the controller and the
 monitor confidently wrong is eliminated. That is the failure mode
 [SW-004](../01-requirements/srs-software.md#sw-004) exists to prevent.
+
+## A candidate the teardown suggests
+
+Competitor A appears to use **no dedicated sensors at all**: hall sensors in the sensored BLDC give
+rotor position and therefore drum angle and cable position, while a 0.060 Ω shunt gives motor
+current and therefore torque and an inference of load *(teardown)*.
+
+If that works, it is remarkably economical — amplitude, position and occupancy from parts the drive
+already needs. But it collides directly with C4: a single motor supplies **both** the controller and
+any monitor, so the independence
+[SW-003](../01-requirements/srs-software.md#sw-003) demands cannot come from the motor alone.
 
 ## The hard part
 

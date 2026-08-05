@@ -7,11 +7,11 @@ Phase 3 have quantified.
 
 | TS | Question | Status | Blocked on | Produces |
 |---|---|---|---|---|
-| [001](TS-001-actuation-concept.md) | How is energy injected into the oscillator? | open | Phase 2 models; **cost target** | ADR-0004 |
-| [002](TS-002-mcu-selection.md) | What runs the control loop? | open | TS-001; SW timing budget | ADR-0005 |
-| [003](TS-003-motor-driver.md) | How is the actuator driven? | open | TS-001 | ADR-0006 |
-| [004](TS-004-sensing-approach.md) | How are motion, load and occupancy sensed? | open | Phase 2 models; Phase 3 hazards | ADR-0007 |
-| [005](TS-005-power-supply.md) | How are the internal rails generated? | open | TS-001, TS-002, TS-003 | ADR-0008 |
+| [001](TS-001-actuation-concept.md) | How is energy injected into the oscillator? | open | Phase 2 models; **cost target** | ADR-0005 |
+| [002](TS-002-mcu-selection.md) | What runs the control loop? | open | TS-001; SW timing budget | ADR-0006 |
+| [003](TS-003-motor-driver.md) | How is the actuator driven? | open | TS-001 | ADR-0007 |
+| [004](TS-004-sensing-approach.md) | How are motion, load and occupancy sensed? | open | Phase 2 models; Phase 3 hazards | ADR-0008 |
+| [005](TS-005-power-supply.md) | How are the internal rails generated? | open | TS-001, TS-002, TS-003 | ADR-0009 |
 
 ## Dependency order
 

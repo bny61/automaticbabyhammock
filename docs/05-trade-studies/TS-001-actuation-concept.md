@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0004
+Decides:    ADR-0005
 Blocked on: Phase 2 energy and damping models; the cost target (Phase 1)
 ```
 
@@ -24,8 +24,13 @@ unknown ([IF-005](../01-requirements/frame-interface-assumptions.md#if-005)). Th
 also wide: [SYS-005](../01-requirements/srs-system.md#sys-005) spans 3–18 kg, a factor of six,
 which moves both the resonant frequency and the required force.
 
-The benchmark products are all quiet, and **none of them publishes how**. Closing that gap is the
-single most valuable input to this study — see [evidence needed](#evidence-needed).
+The benchmark products are all quiet and none publishes how, but **a teardown has now answered it
+for Competitor A**: a sensored BLDC driving a plastic reduction gear and cable drum, pulling a steel
+rope in parallel with the load-bearing springs, with a 6800 µF bulk store feeding an impulsive
+drive. See `brainstorming/teardown/Competitor A/findings.md`.
+
+That is a proven answer, not our answer — it enters this study as one scored candidate among
+several, not as a shortcut past it.
 
 ## Criteria
 
@@ -68,9 +73,10 @@ hardware but in *how they are controlled*, which is why they feed
    ([IF-005](../01-requirements/frame-interface-assumptions.md#if-005)) — measurement, not estimate
 3. **Acoustic target** as a number, from measuring reference products
 4. **Cost target** — currently missing and blocking
-5. **What the benchmark products actually use.** A teardown, or acoustic and current-signature
-   analysis, of a Competitor A or Competitor B unit. They have all solved the quiet-actuation problem
-   commercially; not knowing how is the largest avoidable gap in this study.
+5. ~~What the benchmark products actually use.~~ **Answered for Competitor A** (teardown). Still
+   open for Competitor B and Competitor C, which may use different approaches.
+6. **Peak current at 12 V.** [ADR-0004](../04-decisions/ADR-0004-nominal-supply-voltage.md) fixes
+   the rail, so each candidate must be scored on peak current, not just average power.
 
 ## Note on the physics
 

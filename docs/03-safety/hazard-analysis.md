@@ -189,6 +189,36 @@ probability: occasional
 [UN-001](../00-product/user-needs.md#un-001) — a unit that stays off after a brief glitch has
 failed the parent at 3 a.m. To be decided in Phase 3 with an ADR.
 
+### HAZ-009 — Incorrect user modification of the load path {#haz-009}
+
+```yaml
+id: HAZ-009
+status: draft
+severity: catastrophic
+probability: occasional
+```
+
+**Hazardous situation:** the load path is user-serviceable, and an untrained person alters the
+component carrying their infant — unsupervised, unverified, and typically at speed.
+
+**Harm:** release of the load if an element is incorrectly fitted or left unsecured; or delayed
+failure, where an under-configured load path is overstressed and fails by fatigue weeks later.
+
+**Causes:** fitting too few load-bearing elements for the occupant's weight; incorrect or partial
+engagement of a hook or anchorage; mixing worn and new elements so load sharing is uneven;
+over-extending the assembly; reassembling in the wrong order or orientation; simply not knowing
+that a change was required.
+
+**Evidence this is real:** the benchmark Competitor A unit requires the parent to **add springs to
+the pack as the baby grows** — its owner reports going from 2–3 springs to 5–7. This is not misuse;
+it is the product working as designed. Nothing inspects the result, and the unit gives no
+indication that its configuration is wrong for the current load.
+
+**Note:** [HAZ-001](#haz-001) assumes the load path leaves the factory correct and stays that way.
+This hazard is the case where that assumption does not hold, and it is created by a *design
+choice* — one our product may avoid entirely. See
+IDEA-002 (`brainstorming/ideas/IDEA-002-resonance-tracking-replaces-spring-changes.md`).
+
 ---
 
 ## Not yet analysed

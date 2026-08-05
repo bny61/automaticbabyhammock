@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0005
+Decides:    ADR-0006
 Blocked on: TS-001 (actuation concept sets the control problem); Phase 3 SW timing budget
 ```
 

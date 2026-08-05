@@ -80,6 +80,7 @@ detect the violation itself.
 | [HAZ-006](hazard-analysis.md#haz-006) motor runaway | [SAF-005](../01-requirements/safety-requirements.md#saf-005) independent disable | 2 |
 | [HAZ-007](hazard-analysis.md#haz-007) thermal | [SAF-006](../01-requirements/safety-requirements.md#saf-006) thermal protection | 2/3 |
 | [HAZ-008](hazard-analysis.md#haz-008) unexpected restart | [SAF-008](../01-requirements/safety-requirements.md#saf-008) defined state | 3 |
+| [HAZ-009](hazard-analysis.md#haz-009) user alters the load path | [SAF-009](../01-requirements/safety-requirements.md#saf-009) verify configuration | 2/3 |
 
 The [traceability matrix](../01-requirements/traceability-matrix.md) is the authoritative version
 of this table and flags any hazard that loses its coverage.

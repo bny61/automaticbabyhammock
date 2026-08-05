@@ -187,5 +187,12 @@ without requiring the user to re-adjust the control, and shall re-acquire correc
 `TBD-P2` s of a load change.
 
 **Rationale:** The resonant frequency shifts as the baby grows. Whether this is done by tracking
-resonance or by another means is a design decision for Phase 4, not a requirement. A benchmark
-competitor advertises a "self-learning" motor, so some adaptation is likely table stakes.
+resonance or by another means is a design decision for Phase 4, not a requirement.
+
+*Rationale corrected 2026-08-05.* This previously assumed adaptation was table stakes. It is not:
+Competitor A adapts **mechanically and manually** — the parent adds springs to the pack and re-tunes
+the dial *(observed)*. Automatic adaptation is therefore a potential differentiator, and it would
+also eliminate [HAZ-009](../03-safety/hazard-analysis.md#haz-009) by removing the user's need to
+modify the load path. Its owner rates the manual task as only *mildly* irritating, so the
+commercial value should not be overstated. See
+`brainstorming/ideas/IDEA-002-resonance-tracking-replaces-spring-changes.md`.

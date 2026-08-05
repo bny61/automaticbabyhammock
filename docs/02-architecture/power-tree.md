@@ -7,7 +7,7 @@
 ```mermaid
 flowchart LR
     MAINS["Mains 230 V"] --> PSU["External adapter<br/>EN IEC 62368-1 certified<br/>NOT OUR DESIGN"]
-    PSU -->|"12 V SELV"| PROT["Reverse polarity<br/>+ over-voltage<br/>+ over-current"]
+    PSU -->|"12 V SELV — ADR-0004"| PROT["Reverse polarity<br/>+ over-voltage<br/>+ over-current"]
     PROT --> BULK["Bulk storage"]
     BULK --> DRIVE["Actuator drive rail"]
     BULK --> REG["Regulation"]
@@ -56,7 +56,7 @@ standby dominates the monthly energy figure even though it is the smallest numbe
 
 ## Open questions
 
-- Is 12 V the right input voltage, or does the actuator choice argue for 24 V? Blocked on TS-001.
+- ~~Is 12 V the right input voltage?~~ **Settled: 12 V, by [ADR-0004](../04-decisions/ADR-0004-nominal-supply-voltage.md).** Note the consequence: peak drive current is roughly double a 24 V design, which sizes the switching devices, shunt, connectors and copper.
 - Does any function need to survive a brief input interruption, or is
   [SAF-008](../01-requirements/safety-requirements.md#saf-008) satisfied by a clean restart?
 - Is a monitored, isolated supply for the independent monitor justified, or is a separate regulator

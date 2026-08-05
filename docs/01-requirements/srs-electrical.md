@@ -25,13 +25,15 @@ verification: I
 risk: high
 ```
 
-The ECU shall be powered exclusively from an external SELV supply of `TBD-P4` V nominal, and shall
+The ECU shall be powered exclusively from an external SELV supply of **12 V nominal**, and shall
 contain no circuitry operating at or connected to mains potential.
 
-**Rationale:** Implements [ADR-0002](../04-decisions/ADR-0002-power-input-strategy.md). Keeping
-mains off the board is what places the ECU outside Low Voltage Directive scope, so this is a
-*compliance-load-bearing* requirement — violating it changes the certification route, not just the
-schematic. All benchmark products use an external 12 V adapter.
+**Rationale:** Implements [ADR-0002](../04-decisions/ADR-0002-power-input-strategy.md) and
+[ADR-0004](../04-decisions/ADR-0004-nominal-supply-voltage.md). Keeping mains off the board is what
+places the ECU outside Low Voltage Directive scope, so this is a *compliance-load-bearing*
+requirement — violating it changes the certification route, not just the schematic. The 12 V figure
+is a product constraint set for adapter availability and customer replaceability; its cost is
+roughly double the drive current of a 24 V rail, which ADR-0004 records in full.
 
 ### HW-002 — Input protection {#hw-002}
 

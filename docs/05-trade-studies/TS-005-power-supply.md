@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0008
+Decides:    ADR-0009
 Blocked on: TS-001, TS-002, TS-003 — all three define the loads
 ```
 

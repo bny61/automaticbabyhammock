@@ -16,7 +16,7 @@ that Phase 2 modelling has quantified.
 
 - **Never** pick a part, MCU or actuator because it seems reasonable. If a decision is needed,
   open a trade study (`docs/05-trade-studies/`) and close it with an ADR (`docs/04-decisions/`).
-- **Never** write firmware that assumes a platform before `ADR-0004` (MCU selection) exists.
+- **Never** write firmware that assumes a platform before the MCU-selection ADR exists (expected `ADR-0006`, from `TS-002`).
 - If work is blocked on an undecided question, say so and name the ADR/TS that must land first.
   Being blocked is a valid, useful outcome. Guessing is not.
 

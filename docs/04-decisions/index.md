@@ -10,18 +10,19 @@ what it costs.
 | [0001](ADR-0001-product-positioning.md) | Product positioning — sleep product or soothing swing | **proposed** | Everything |
 | [0002](ADR-0002-power-input-strategy.md) | External SELV adapter; no mains on the ECU | **proposed** | HW requirements, certification route |
 | [0003](ADR-0003-connectivity-stance.md) | No radio; physical control on the unit | **proposed** | TS-002, TS-004, RED applicability |
+| [0004](ADR-0004-nominal-supply-voltage.md) | Nominal supply voltage of 12 V | **accepted** | HW-001, TS-001, TS-003, TS-005 |
 
 ### Expected in Phase 4
 
 | ADR | Decision | Blocked on |
 |---|---|---|
-| 0004 | Actuation concept | [TS-001](../05-trade-studies/TS-001-actuation-concept.md) |
-| 0005 | Control processor | [TS-002](../05-trade-studies/TS-002-mcu-selection.md) |
-| 0006 | Actuator drive topology | [TS-003](../05-trade-studies/TS-003-motor-driver.md) |
-| 0007 | Sensing approach | [TS-004](../05-trade-studies/TS-004-sensing-approach.md) |
-| 0008 | Internal power topology | [TS-005](../05-trade-studies/TS-005-power-supply.md) |
-| 0009 | How monitor independence is realised | Phase 4 architecture |
-| 0010 | Behaviour on power restoration | [SAF-008](../01-requirements/safety-requirements.md#saf-008) |
+| 0005 | Actuation concept | [TS-001](../05-trade-studies/TS-001-actuation-concept.md) |
+| 0006 | Control processor | [TS-002](../05-trade-studies/TS-002-mcu-selection.md) |
+| 0007 | Actuator drive topology | [TS-003](../05-trade-studies/TS-003-motor-driver.md) |
+| 0008 | Sensing approach | [TS-004](../05-trade-studies/TS-004-sensing-approach.md) |
+| 0009 | Internal power topology | [TS-005](../05-trade-studies/TS-005-power-supply.md) |
+| 0010 | How monitor independence is realised | Phase 4 architecture |
+| 0011 | Behaviour on power restoration | [SAF-008](../01-requirements/safety-requirements.md#saf-008) |
 
 ## Rules
 

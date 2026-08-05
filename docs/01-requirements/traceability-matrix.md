@@ -11,16 +11,16 @@
 | Type | Count | Approved | Draft |
 |---|---:|---:|---:|
 | `UN` | 9 | 0 | 9 |
-| `HAZ` | 8 | 0 | 8 |
+| `HAZ` | 9 | 0 | 9 |
 | `SYS` | 10 | 0 | 10 |
 | `HW` | 4 | 0 | 4 |
 | `SW` | 4 | 0 | 4 |
 | `MEC` | 5 | 0 | 5 |
 | `IF` | 6 | 0 | 6 |
-| `SAF` | 8 | 0 | 8 |
+| `SAF` | 9 | 0 | 9 |
 | `TC` | 3 | 0 | 3 |
 
-**Total:** 57 requirement(s).
+**Total:** 59 requirement(s).
 
 ## User needs → system requirements
 
@@ -48,6 +48,7 @@
 | [HAZ-006](../03-safety/hazard-analysis.md#haz-006) | Motor or control runaway | critical | [SAF-002](../01-requirements/safety-requirements.md#saf-002)<br>[SAF-003](../01-requirements/safety-requirements.md#saf-003)<br>[SAF-005](../01-requirements/safety-requirements.md#saf-005) | [TC-002](../06-verification/test-cases/index.md#tc-002) |
 | [HAZ-007](../03-safety/hazard-analysis.md#haz-007) | Thermal hazard under continuous duty | critical | [SAF-006](../01-requirements/safety-requirements.md#saf-006) | — *none* |
 | [HAZ-008](../03-safety/hazard-analysis.md#haz-008) | Unexpected restart after power interruption | marginal | [SAF-008](../01-requirements/safety-requirements.md#saf-008) | — *none* |
+| [HAZ-009](../03-safety/hazard-analysis.md#haz-009) | Incorrect user modification of the load path | catastrophic | [SAF-009](../01-requirements/safety-requirements.md#saf-009) | — *none* |
 
 ## Full matrix
 
@@ -61,6 +62,7 @@
 | [HAZ-006](../03-safety/hazard-analysis.md#haz-006) | Motor or control runaway | `draft` | *root* | — | — *none* |
 | [HAZ-007](../03-safety/hazard-analysis.md#haz-007) | Thermal hazard under continuous duty | `draft` | *root* | — | — *none* |
 | [HAZ-008](../03-safety/hazard-analysis.md#haz-008) | Unexpected restart after power interruption | `draft` | *root* | — | — *none* |
+| [HAZ-009](../03-safety/hazard-analysis.md#haz-009) | Incorrect user modification of the load path | `draft` | *root* | — | — *none* |
 | [HW-001](../01-requirements/srs-electrical.md#hw-001) | SELV input only | `draft` | [SYS-004](../01-requirements/srs-system.md#sys-004) | I | — *none* |
 | [HW-002](../01-requirements/srs-electrical.md#hw-002) | Input protection | `draft` | [SAF-005](../01-requirements/safety-requirements.md#saf-005) | T | — *none* |
 | [HW-003](../01-requirements/srs-electrical.md#hw-003) | Drive disable independent of the control processor | `draft` | [SAF-005](../01-requirements/safety-requirements.md#saf-005) | T | [TC-002](../06-verification/test-cases/index.md#tc-002) |
@@ -84,6 +86,7 @@
 | [SAF-006](../01-requirements/safety-requirements.md#saf-006) | Thermal protection | `draft` | [SYS-003](../01-requirements/srs-system.md#sys-003) | T | — *none* |
 | [SAF-007](../01-requirements/safety-requirements.md#saf-007) | No entrapment or entanglement points | `draft` | [SYS-009](../01-requirements/srs-system.md#sys-009) | I | — *none* |
 | [SAF-008](../01-requirements/safety-requirements.md#saf-008) | Defined behaviour on power restoration | `draft` | [SYS-001](../01-requirements/srs-system.md#sys-001) | T | — *none* |
+| [SAF-009](../01-requirements/safety-requirements.md#saf-009) | Verify the load-path configuration before driving | `draft` | [SYS-009](../01-requirements/srs-system.md#sys-009) | T | — *none* |
 | [SW-001](../01-requirements/srs-software.md#sw-001) | Deterministic control timing | `draft` | [SYS-001](../01-requirements/srs-system.md#sys-001) | T | — *none* |
 | [SW-002](../01-requirements/srs-software.md#sw-002) | Safe state on fault | `draft` | [SAF-005](../01-requirements/safety-requirements.md#saf-005) | T | — *none* |
 | [SW-003](../01-requirements/srs-software.md#sw-003) | Amplitude limit enforced independently of the control loop | `draft` | [SAF-002](../01-requirements/safety-requirements.md#saf-002) | T | [TC-002](../06-verification/test-cases/index.md#tc-002) |

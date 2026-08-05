@@ -164,3 +164,24 @@ shall not resume driven motion at a higher amplitude than before the interruptio
 all is a real trade-off against [UN-001](../00-product/user-needs.md#un-001) — staying off after a
 brief glitch fails the parent at 3 a.m. This requirement deliberately mandates *definedness* now
 and defers the choice to a Phase 3 ADR.
+
+### SAF-009 — Verify the load-path configuration before driving {#saf-009}
+
+```yaml
+id: SAF-009
+status: draft
+parent: SYS-009
+verification: T
+mitigates: HAZ-009
+risk: high
+```
+
+Where any part of the load path is user-serviceable, the ECU shall detect a configuration that is
+incorrect or inadequate for the suspended load, shall not commence driven motion, and shall
+indicate the condition to the user.
+
+**Rationale:** [HAZ-009](../03-safety/hazard-analysis.md#haz-009). The benchmark product requires
+the parent to add springs as the baby grows and then does nothing to check the result — an
+under-configured load path announces itself only through degraded feel, if at all. Written
+conditionally because the cleanest mitigation is to remove user serviceability from the load path
+altogether, which is a Phase 4 design decision rather than a requirement.
