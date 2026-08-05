@@ -7,7 +7,8 @@ The working tree is anonymised. **The git history is not.**
 Everything committed before 2026-08-05 contains:
 
 - **Competitor brand and product names**, in documents *and in commit messages*
-- **Teardown photographs** of a competitor's internals — roughly 16 MB of images
+- **Teardown photographs** of a competitor's internals — roughly 16 MB of images, committed between
+  2026-08-05 and their untracking later the same day
 - Verbatim German marketing copy, which identifies a company as surely as its name
 
 Anonymising the working tree does not remove any of this. `git log`, `git show` and every GitHub
@@ -24,7 +25,8 @@ grep -rniE 'Competitor A|Competitor B|Competitor C|A-1|A-2|A-3|B-1' \
      --include='*.md' --include='*.yml' . | grep -v '^./site/' | grep -v '^./.venv/'
 #    (should print nothing; note "maly" also matches "anomaly" - check hits by eye)
 
-# 2. Decide what to do about brainstorming/teardown/ - see below
+# 2. Teardown images are already gitignored, so they will not be exported.
+#    Confirm anyway:  ls ../abh-public/brainstorming/teardown/competitor-a/
 
 # 3. Export the current tree with no history at all
 git checkout-index -a -f --prefix=../abh-public/
@@ -38,17 +40,16 @@ git commit -m "Initial public release"
 
 ## The teardown photographs
 
-These are the largest exposure, larger than the names. They are internal photographs of a product
-someone else designed and sells.
+**Untracked as of 2026-08-05.** They remain on the owner's disk, are gitignored, and will not appear
+in any future commit or in a `git checkout-index` export.
+
+They are, however, **still in the history** of commits made before that date. See below.
 
 Buying a product and examining it is normal and generally lawful, and factual technical description
 is ordinary engineering practice. Publishing photographs of a competitor's internals is a different
-act, and it invites a complaint even where it is defensible.
-
-**Recommendation: keep `brainstorming/teardown/` out of anything public.** The engineering value is
-in the *findings* — architecture, part types, the parallel load path — and those survive perfectly
-well in prose without the images. Delete the directory from the exported tree, or add it to the
-public repository's `.gitignore`.
+act, and it invites a complaint even where it is defensible — which is why they are no longer
+tracked. The engineering value is in `brainstorming/teardown/competitor-a/findings.md`: the part
+numbers, the architecture, the parallel load path. None of that needs the images.
 
 ## What to keep checking
 

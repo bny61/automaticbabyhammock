@@ -59,3 +59,13 @@ Thumbs.db
 
 # --- Private: competitor identities, never commit ----------------------------
 COMPETITOR-KEY.md
+
+# --- Teardown photographs: kept locally, never committed ---------------------
+# Photographs of a competitor's internals are the largest publication exposure in
+# this project, and once committed they persist in history. The engineering value
+# lives in findings.md, not in the images. See PUBLISHING.md.
+brainstorming/teardown/**/*.jpg
+brainstorming/teardown/**/*.jpeg
+brainstorming/teardown/**/*.png
+brainstorming/teardown/**/*.HEIC
+brainstorming/teardown/**/*.heic

@@ -3,12 +3,18 @@
 ```
 Date:     2026-08-05
 Unit:     Competitor A (owner's unit, in service)
-Evidence: photographs in this directory
+Evidence: photographs held locally only — deliberately not in git, see PUBLISHING.md
 Status:   first pass, from photographs only — nothing here has been measured
 ```
 
 This answers the question [TS-001](../../../docs/05-trade-studies/TS-001-actuation-concept.md)
 called its largest avoidable gap: **how the incumbent achieves quiet actuation**.
+
+!!! note "The photographs are not in this repository"
+    They are held locally by the owner and are gitignored, because publishing photographs of
+    another company's internals is the largest exposure in this project. **This document is the
+    deliverable** — the part numbers, the architecture and the diagrams below carry the engineering
+    value without the images. See `PUBLISHING.md`.
 
 ---
 
@@ -29,7 +35,7 @@ called its largest avoidable gap: **how the incumbent achieves quiet actuation**
 
 ## The mechanism
 
-From `coilPulsHammock.jpg`: a **motorised cable winch**.
+From the winch photograph: a **motorised cable winch**.
 
 A small black pinion on the motor shaft drives a **large white plastic reduction gear**, which is
 integral with a **cable drum**. A **steel wire rope** is wound on the drum and runs down through a

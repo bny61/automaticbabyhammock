@@ -1,6 +1,12 @@
 # Teardowns
 
-Photographs and findings from examining competitor units.
+Findings from examining competitor units.
+
+!!! warning "Photographs are never committed"
+    `.gitignore` excludes all image files under this directory. Keep them locally; write what you
+    learned into a `findings.md` instead. Photographs of another company's internals are the largest
+    publication exposure in this project, and anything committed persists in git history even after
+    deletion. See `PUBLISHING.md`.
 
 **This is the highest-value evidence in the project.** The
 [competitive benchmark](../../docs/00-product/competitive-benchmark.md) currently rests on vendor
@@ -17,6 +23,8 @@ avoidable gap: how the incumbents achieve quiet actuation.
 - If anything in the load path is disturbed, damaged or does not go back as it came apart, retire
   the unit from service rather than trusting it.
 - Opening it will likely void any warranty.
+- Photograph freely for your own analysis — but **keep the images out of git**. Record the findings
+  in prose and diagrams instead.
 
 ## Findings route into
 
