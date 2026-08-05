@@ -24,7 +24,7 @@ called its largest avoidable gap: **how the incumbent achieves quiet actuation**
 | Bulk capacitor | `6800 µF 35 V` | Electrolytic, energy reservoir | **High** |
 | Power MOSFETs | SOIC-8, unread | Presumed 3 × dual N-channel = 6 FETs for the 3-phase bridge | **Medium** — inferred from the driver |
 | Buck inductor | `4R7` | 4.7 µH — switching regulator for logic rail | **High** |
-| Controls | 2 × panel potentiometer | `P1`, `P2` on silkscreen | **High** — but see questions |
+| Controls | 2 × panel potentiometer | `P1`, `P2` on silkscreen; only one user-facing | **High** |
 | PCB | `HS M 94V-0 E315835 / H19003-5 / 2128` | UL 94V-0 laminate; `2128` reads as a 2021 date code | Medium |
 
 ## The mechanism
@@ -43,27 +43,28 @@ which is exactly the *"linear actuator in the load path"* concept listed in
 
 ```mermaid
 flowchart TB
-    PSU["External adapter<br/>(SELV, voltage TBC)"] --> BULK["Bulk store<br/>6800 µF / 35 V"]
+    PSU["External SELV adapter"] --> BULK["Bulk store<br/>6800 µF / 35 V"]
     BULK --> BUCK["Buck converter<br/>4R7 inductor"]
     BULK --> BRIDGE["3-phase bridge<br/>6 × MOSFET"]
     BUCK --> MCU["MCU<br/>NXP LPC1114<br/>Cortex-M0"]
 
-    POT["2 × potentiometer<br/>P1, P2"] --> MCU
+    POT["Potentiometer<br/>(1 user-facing, 1 trim)"] --> MCU
     MCU --> LED["LED indicator"]
 
     MCU -->|"PWM"| DRV["Gate driver<br/>TI DRV8306H"]
     DRV --> BRIDGE
     BRIDGE --> MOTOR["BLDC motor<br/>JK42BLS01-X055<br/>42 mm frame"]
 
-    MOTOR -->|"hall feedback?"| MCU
+    MOTOR -->|"hall position (sensored)"| MCU
     BRIDGE --> SHUNT["Shunt 0.060 Ω"]
     SHUNT --> AMP["LM2904<br/>current sense"]
     AMP --> MCU
 
     MOTOR --> PINION["Pinion"] --> GEAR["Plastic reduction gear"]
     GEAR --> DRUM["Cable drum"]
-    DRUM --> ROPE["Steel wire rope"]
-    ROPE --> SPRINGS["Spring pack<br/>2–7 springs, user-added"]
+    DRUM --> ROPE["Steel wire rope<br/>PULLS ONLY"]
+    SUSP["Suspension point"] --> SPRINGS["Spring pack<br/>2–7 springs, user-added<br/>CARRIES THE LOAD"]
+    ROPE -.->|"pulls, in parallel"| SPRINGS
     SPRINGS --> HAMMOCK["Hammock + infant"]
 
     style MOTOR stroke-width:3px
@@ -92,8 +93,8 @@ flowchart TB
                            ││
                        hammock + infant
 
-   ??? OPEN QUESTION: is the rope in series with the load (so the plastic gear
-       train carries the infant), or in parallel with springs that carry it?
+   CONFIRMED by owner: the SPRINGS carry the load. The rope only PULLS them.
+   The gear train is in PARALLEL with the load path, not in series.
 ```
 
 ## What this tells us
@@ -129,18 +130,61 @@ is a notable difference from our
 | [TS-001](../../../docs/05-trade-studies/TS-001-actuation-concept.md) actuation concept undecided | A working, quiet, shipped answer exists: sensored BLDC + reduction gear + cable drum |
 | [TS-004](../../../docs/05-trade-studies/TS-004-sensing-approach.md) sensing undecided | Motor-intrinsic sensing may remove the need for dedicated sensors entirely |
 | [SAF-005](../../../docs/01-requirements/safety-requirements.md#saf-005) independent drive disable | No independent monitor visible in the incumbent — our requirement may exceed the category norm |
-| [HW-001](../../../docs/01-requirements/srs-electrical.md#hw-001) 12 V nominal | 35 V-rated bulk capacitor raises the question of whether the rail is actually higher |
+| [HW-001](../../../docs/01-requirements/srs-electrical.md#hw-001) nominal voltage `TBD-P4` | Owner has set **12 V** for our design; incumbent may run higher |
 | Bulk storage sizing "depends on the actuation concept" | Confirmed: 6800 µF for an impulsive drive |
 
 **This is evidence about a competitor, not a decision about our product.** It informs the trade
 studies; it does not shortcut them.
 
-## Open questions
+## Resolved by the owner (2026-08-05)
 
-1. **Does the steel rope carry the infant's full weight?** If so, the plastic gear train is in the
-   load path and a tooth failure drops the baby. Safety-critical to resolve.
-2. Is the motor sensored (hall wires present) or is commutation sensorless?
-3. What are the two potentiometers for? The owner reports only one user-facing dial.
-4. What is the adapter's actual output voltage?
-5. Is there any mechanical brake, ratchet or self-locking element holding the load when unpowered?
-6. Spring rate, free length and count.
+| Question | Answer |
+|---|---|
+| Does the rope carry the infant's weight? | **No.** The springs carry the load; the rope only pulls them. See below — this is the most important finding of the teardown. |
+| Sensored or sensorless commutation? | **Sensored.** Hall sensors confirmed, so rotor position — and therefore drum angle and cable position — is available to the MCU. |
+| Two potentiometers? | Only one is user-facing. The second is presumed an internal trim. **Our product will expose a single dial.** |
+| Rail voltage | The 35 V capacitor does hint the incumbent runs higher, but **our design targets a 12 V rail** by decision. |
+
+## The architecture insight: the actuator is not in the load path
+
+This is the single most valuable thing learned from the teardown, and it is a *safety
+architecture* choice rather than a mechanical detail.
+
+```
+        suspension point
+              │
+    ┌─────────┴──────────┐
+    │                    │
+  SPRINGS            ROPE + DRUM + GEAR + MOTOR
+  carry the load     pull the springs
+    │                    │
+    └─────────┬──────────┘
+              │
+       hammock + infant
+
+  LOAD PATH  = springs only, purely mechanical, n-way redundant
+  DRIVE PATH = motor, gear, drum, rope - in PARALLEL, carries no static load
+```
+
+**Consequences:**
+
+- **No actuator failure can drop the infant.** A stripped gear tooth, a snapped rope, a seized
+  drum, a shorted MOSFET or dead firmware causes *loss of function*, never loss of load. The unit
+  stops bouncing and hangs there.
+- The plastic gear is therefore an acceptable choice in a product carrying a baby — it would not
+  be if it were in series.
+- No brake, ratchet or self-locking element is needed to hold the load unpowered, because the
+  drive never holds the load.
+- Redundancy in the load path reduces to redundancy **in the springs**, which is exactly what the
+  multi-spring pack provides — and it explains why the pack can serve both load adaptation and
+  fault tolerance without conflict.
+
+This is a principle worth adopting outright rather than re-deriving: see
+[IDEA-004](../../ideas/IDEA-004-actuator-parallel-to-load-path.md).
+
+## Remaining open
+
+- Spring rate, free length and count
+- Where exactly the rope terminates — does it pull the top of the spring stack, or the load below it?
+- Motor gear ratio, and drum diameter — needed to convert motor revolutions to cable travel
+- Whether any independent safety monitor exists that the photographs do not show
