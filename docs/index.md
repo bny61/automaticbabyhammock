@@ -29,6 +29,8 @@ to do the modelling — not to guess.
 | What the ECU must do | [System requirements](01-requirements/srs-system.md) |
 | What can go wrong | [Hazard analysis](03-safety/hazard-analysis.md) |
 | Why something was decided | [Decisions (ADR)](04-decisions/index.md) |
+| **What is still unanswered** | **[Open points](open-points.md)** |
+| The formulas everything rests on | [Physics reference](02-architecture/physics-reference.md) |
 
 ## Reading the structure
 

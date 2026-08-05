@@ -27,6 +27,8 @@ theme:
 
 markdown_extensions:
   - admonition
+  - pymdownx.arithmatex:
+      generic: true
   - attr_list
   - tables
   - toc:
@@ -40,6 +42,10 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
 validation:
   omitted_files: warn
   absolute_links: warn
@@ -47,6 +53,7 @@ validation:
 
 nav:
   - Home: index.md
+  - Open points: open-points.md
 
   - 00 Product:
       - Vision: 00-product/vision.md
@@ -71,6 +78,7 @@ nav:
   - 02 Architecture:
       - System architecture: 02-architecture/system-architecture.md
       - ECU block diagram: 02-architecture/ecu-block-diagram.md
+      - Physics reference: 02-architecture/physics-reference.md
       - Power tree: 02-architecture/power-tree.md
       - Interface control document: 02-architecture/interface-control-document.md
       - Operating modes: 02-architecture/operating-modes.md

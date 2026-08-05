@@ -71,6 +71,7 @@ pip install -r requirements.txt
 mkdocs serve                              # docs site at http://127.0.0.1:8000
 python tools/check_requirements.py        # lint requirement IDs and links
 python tools/gen_traceability.py          # regenerate the traceability matrix
+python tools/list_open_points.py          # cross-check the open-points register
 ```
 
 Run the linter before every commit touching `docs/`. The traceability matrix is **generated** —

@@ -37,6 +37,9 @@ jobs:
       - name: Check the traceability matrix is up to date
         run: python tools/gen_traceability.py --check
 
+      - name: Report open points
+        run: python tools/list_open_points.py
+
       - name: Build docs
         run: mkdocs build --strict
 
