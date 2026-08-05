@@ -136,7 +136,7 @@ cybersecurity requirements, **and** it may actively harm positioning with the ta
 
 ### A documented field failure at the frame interface
 
-Competitor A warns that A-2 is is incompatible with stands that have their own resonance. A driven oscillator coupled into a
+Competitor A warns that A-2 is incompatible with stands that have their own resonance. A driven oscillator coupled into a
 compliant support can pump energy into an unintended mode and grow the amplitude beyond design
 intent. Because our stand is out of scope, this must become a **bounded, testable constraint** in
 the ICD rather than an unstated assumption. Drives [HAZ-002](../03-safety/hazard-analysis.md#haz-002)
