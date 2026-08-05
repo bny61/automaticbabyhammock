@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0005
+Decides:    an ADR (number allocated when written)
 Blocked on: Phase 2 energy and damping models; the cost target (Phase 1)
 ```
 

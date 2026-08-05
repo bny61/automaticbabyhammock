@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0008
+Decides:    an ADR (number allocated when written)
 Blocked on: Phase 2 models; Phase 3 hazard analysis
 ```
 

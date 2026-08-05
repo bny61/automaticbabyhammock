@@ -11,18 +11,22 @@ what it costs.
 | [0002](ADR-0002-power-input-strategy.md) | External SELV adapter; no mains on the ECU | **proposed** | HW requirements, certification route |
 | [0003](ADR-0003-connectivity-stance.md) | No radio; physical control on the unit | **proposed** | TS-002, TS-004, RED applicability |
 | [0004](ADR-0004-nominal-supply-voltage.md) | Nominal supply voltage of 12 V | **accepted** | HW-001, TS-001, TS-003, TS-005 |
+| [0005](ADR-0005-behaviour-on-power-restoration.md) | Behaviour on power restoration — sustain, never initiate | **accepted** | SAF-008, TS-004, operating modes |
 
-### Expected in Phase 4
+### Still to decide
 
-| ADR | Decision | Blocked on |
-|---|---|---|
-| 0005 | Actuation concept | [TS-001](../05-trade-studies/TS-001-actuation-concept.md) |
-| 0006 | Control processor | [TS-002](../05-trade-studies/TS-002-mcu-selection.md) |
-| 0007 | Actuator drive topology | [TS-003](../05-trade-studies/TS-003-motor-driver.md) |
-| 0008 | Sensing approach | [TS-004](../05-trade-studies/TS-004-sensing-approach.md) |
-| 0009 | Internal power topology | [TS-005](../05-trade-studies/TS-005-power-supply.md) |
-| 0010 | How monitor independence is realised | Phase 4 architecture |
-| 0011 | Behaviour on power restoration | [SAF-008](../01-requirements/safety-requirements.md#saf-008) |
+**Numbers are allocated when an ADR is written, never reserved in advance** — reserving them once
+already forced a renumber. Use `python tools/new_adr.py "Title"`.
+
+| Decision | Blocked on |
+|---|---|
+| Actuation concept | [TS-001](../05-trade-studies/TS-001-actuation-concept.md) |
+| Control processor | [TS-002](../05-trade-studies/TS-002-mcu-selection.md) |
+| Actuator drive topology | [TS-003](../05-trade-studies/TS-003-motor-driver.md) |
+| Sensing approach | [TS-004](../05-trade-studies/TS-004-sensing-approach.md) |
+| Internal power topology | [TS-005](../05-trade-studies/TS-005-power-supply.md) |
+| How monitor independence is realised | Phase 4 architecture |
+| **Tap-to-start architecture** | Candidate in `brainstorming/ideas/IDEA-005-tap-to-start-user-excites-unit-sustains.md`; needed before the Acquire state is binding |
 
 ## Rules
 

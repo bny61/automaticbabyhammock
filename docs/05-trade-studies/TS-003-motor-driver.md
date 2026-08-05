@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0007
+Decides:    an ADR (number allocated when written)
 Blocked on: TS-001 — the actuation concept determines what is being driven
 ```
 

@@ -157,13 +157,16 @@ mitigates: HAZ-008
 risk: medium
 ```
 
-The ECU shall enter a defined, documented state on restoration of power after an interruption, and
-shall not resume driven motion at a higher amplitude than before the interruption.
+On restoration of power after an interruption the ECU shall not initiate motion. It shall sustain
+oscillation only where oscillation is already present in the hammock, and shall otherwise remain
+idle until a deliberate user action.
 
-**Rationale:** [HAZ-008](../03-safety/hazard-analysis.md#haz-008). Whether it should auto-resume at
-all is a real trade-off against [UN-001](../00-product/user-needs.md#un-001) — staying off after a
-brief glitch fails the parent at 3 a.m. This requirement deliberately mandates *definedness* now
-and defers the choice to a Phase 3 ADR.
+**Rationale:** [HAZ-008](../03-safety/hazard-analysis.md#haz-008), decided by
+[ADR-0005](../04-decisions/ADR-0005-behaviour-on-power-restoration.md). This distinguishes a brief
+blip from a real outage **by physics rather than by a timer**: after a short interruption the
+hammock is still moving and the unit carries on; after a long one the motion has decayed and
+nothing happens. The unit never creates motion, only sustains motion it did not cause — which also
+prevents exceeding the previous amplitude by construction.
 
 ### SAF-009 — Verify the load-path configuration before driving {#saf-009}
 

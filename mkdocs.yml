@@ -89,6 +89,7 @@ nav:
       - ADR-0002 Power input strategy: 04-decisions/ADR-0002-power-input-strategy.md
       - ADR-0003 Connectivity stance: 04-decisions/ADR-0003-connectivity-stance.md
       - ADR-0004 Nominal supply voltage: 04-decisions/ADR-0004-nominal-supply-voltage.md
+      - ADR-0005 Power restoration: 04-decisions/ADR-0005-behaviour-on-power-restoration.md
 
   - 05 Trade studies:
       - Index: 05-trade-studies/index.md

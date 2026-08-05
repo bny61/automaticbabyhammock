@@ -3,7 +3,7 @@
 ```
 Status:     open
 Owner:      TBD
-Decides:    ADR-0009
+Decides:    an ADR (number allocated when written)
 Blocked on: TS-001, TS-002, TS-003 — all three define the loads
 ```
 
