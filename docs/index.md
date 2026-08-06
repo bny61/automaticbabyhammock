@@ -29,6 +29,7 @@ to do the modelling — not to guess.
 | What the ECU must do | [System requirements](01-requirements/srs-system.md) |
 | What can go wrong | [Hazard analysis](03-safety/hazard-analysis.md) |
 | Why something was decided | [Decisions (ADR)](04-decisions/index.md) |
+| **Where the project stands** | **[Project status](project-status.md)** |
 | **What is still unanswered** | **[Open points](open-points.md)** |
 | The formulas everything rests on | [Physics reference](02-architecture/physics-reference.md) |
 
@@ -53,10 +54,14 @@ flowchart LR
 
 ## Current status
 
-Phase 0 (scaffold) is complete. **Nothing else should begin before
-[ADR-0001 — product positioning](04-decisions/ADR-0001-product-positioning.md)**, because it
-decides which harmonised standard the product is built to, and therefore what the product
-physically is.
+Phase 0 is complete and Phases 1–3 are in progress in parallel — product definition, physics
+modelling and hazard analysis all exist in draft. No requirement is approved, no trade study is
+closed and no hardware is chosen, because
+[ADR-0001 — product positioning](04-decisions/ADR-0001-product-positioning.md) is still
+`proposed`: it decides which harmonised standard the product is built to, and therefore what the
+product physically is.
+
+Full picture, with counts and the current blockers: **[Project status](project-status.md)**.
 
 ## Conventions
 

@@ -53,6 +53,7 @@ validation:
 
 nav:
   - Home: index.md
+  - Project status: project-status.md
   - Open points: open-points.md
 
   - 00 Product:

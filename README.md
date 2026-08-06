@@ -34,18 +34,24 @@ assumption with a tolerance band.
 
 ## Phase status
 
+*As of 2026-08-06. Detail, counts and blockers: [`docs/project-status.md`](docs/project-status.md).*
+
 | Phase | Content | Status |
 |---|---|---|
 | 0 | Repository scaffold, tooling, conventions | ✅ complete |
-| 1 | Product definition, regulatory positioning, benchmark | ⬜ not started |
-| 2 | Interface control document, physics & control modelling | ⬜ not started |
-| 3 | Hazard analysis, DFMEA, requirements | ⬜ not started |
-| 4 | Architecture and trade studies — **hardware chosen here** | ⬜ not started |
+| 1 | Product definition, regulatory positioning, benchmark | 🟡 in progress |
+| 2 | Interface control document, physics & control modelling | 🟡 in progress |
+| 3 | Hazard analysis, DFMEA, requirements | 🟡 in progress |
+| 4 | Architecture and trade studies — **hardware chosen here** | ⬜ scaffolded, not started |
 | 5 | Schematic, PCB, firmware, mechanical design | ⬜ not started |
 
-**Next action:** write [`ADR-0001 — product positioning`](docs/04-decisions/ADR-0001-product-positioning.md).
-Nothing else should start before it, because it decides which harmonised standard the product is
-built to, and therefore what the product physically is.
+59 requirements exist, all `draft`; 5 ADRs, of which 2 are accepted; 5 trade studies, all open;
+62 `TBD` markers and 36 open points. No hardware has been chosen.
+
+**Next actions:** take the Phase 2 bench measurements (`OP-005`…`OP-011`), then close
+[`OP-001`](docs/open-points.md) by accepting or superseding
+[`ADR-0001 — product positioning`](docs/04-decisions/ADR-0001-product-positioning.md), and set a
+cost target (`OP-002`) — without one, `TS-001` cannot be scored and Phase 4 cannot begin.
 
 ## Navigating the docs
 
